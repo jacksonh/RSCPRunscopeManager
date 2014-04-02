@@ -87,14 +87,9 @@
 
 + (void)load
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-
-		[self swizzleSelector:@selector(initWithURL:cachePolicy:timeoutInterval:)
-				   toSelector:@selector(rscp_initWithURL:cachePolicy:timeoutInterval:)
-					  inClass:class];
-    });
+	[self swizzleSelector:@selector(initWithURL:cachePolicy:timeoutInterval:)
+			   toSelector:@selector(rscp_initWithURL:cachePolicy:timeoutInterval:)
+				  inClass:class];
 }
 
 + (void)swizzleSelector:(SEL)originalSelector toSelector:(SEL)swizzledSelector inClass:(Class)class
@@ -130,14 +125,9 @@
 
 + (void)load
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-
-		[self swizzleSelector:@selector(setURL:)
-				   toSelector:@selector(rscp_setURL:)
-					  inClass:class];
-    });
+	[self swizzleSelector:@selector(setURL:)
+			   toSelector:@selector(rscp_setURL:)
+				  inClass:class];
 }
 
 - (void)rscp_setURL:(NSURL *)URL
