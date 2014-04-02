@@ -16,7 +16,6 @@
 
 @end
 
-
 @implementation RSCPRunscopeManager
 
 
@@ -39,7 +38,9 @@
 
 - (void)startTrackingRequestsWithBucketKey:(NSString *)bucketKey
 {
+#ifdef DEBUG
 	[self setBucketKey:bucketKey];
+#endif
 }
 
 - (void)stopTrackingRequests
@@ -79,6 +80,8 @@
 
 @end
 
+
+#ifdef DEBUG
 
 @implementation NSURLRequest (RSCPTracking)
 
@@ -144,4 +147,7 @@
 }
 
 @end
+
+#endif
+
 
