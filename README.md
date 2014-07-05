@@ -16,7 +16,7 @@ In your AppDelegate - as early as possible - invoke ```startTrackingRequestsWith
 Installing
 ----------
 
-I reccomend using [CocoaPods](http://cocoapods.org) :
+I recommend using [CocoaPods](http://cocoapods.org) :
 
     pod 'RSCPRunscopeManager', '~> 0.2.0'
 
