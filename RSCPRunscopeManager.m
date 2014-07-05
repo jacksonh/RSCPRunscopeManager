@@ -89,7 +89,7 @@
 {
 	[self swizzleSelector:@selector(initWithURL:cachePolicy:timeoutInterval:)
 			   toSelector:@selector(rscp_initWithURL:cachePolicy:timeoutInterval:)
-				  inClass:class];
+				  inClass:[self class]];
 }
 
 + (void)swizzleSelector:(SEL)originalSelector toSelector:(SEL)swizzledSelector inClass:(Class)class
@@ -127,7 +127,7 @@
 {
 	[self swizzleSelector:@selector(setURL:)
 			   toSelector:@selector(rscp_setURL:)
-				  inClass:class];
+				  inClass:[self class]];
 }
 
 - (void)rscp_setURL:(NSURL *)URL
