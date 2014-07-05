@@ -12,3 +12,11 @@ In your AppDelegate - as early as possible - invoke ```startTrackingRequestsWith
 
     [[RSCPRunscopeManager sharedManager] startTrackingRequestsWithBucketKey:@"YOUR_KEY_HERE"];
 
+
+Installing
+----------
+
+I reccomend using (http://cocoapods.org)[CocoaPods] :
+
+    pod 'RSCPRunscopeManager', '~> 0.2.0'
+
