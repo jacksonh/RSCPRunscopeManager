@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RSCPRunscopeManager"
-  s.version 	     = "0.3.0"
+  s.version 	     = "0.4.0"
   s.summary          = "Proxy all your HTTP requests through Runscope"
   s.homepage         = "https://github.com/jacksonh/RSCPRunscopeManager"
   s.license          = 'MIT'
