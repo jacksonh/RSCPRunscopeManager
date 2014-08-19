@@ -11,7 +11,7 @@
 @class RSCPRunscopeManager;
 
 
-@protocol RSCPRunscopeManager <NSObject>
+@protocol RSCPRunscopeManagerDelegate <NSObject>
 
 @optional
 
@@ -28,7 +28,7 @@
 - (void)stopTrackingRequests;
 
 @property (nonatomic, readonly) BOOL isTrackingRequests;
-@property (weak, nonatomic) id<RSCPRunscopeManager> delegate;
+@property (weak, nonatomic) id<RSCPRunscopeManagerDelegate> delegate;
 
 @end
 
