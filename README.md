@@ -18,7 +18,7 @@ Filtering
 
 If you'd like certain URLs to not be sent to Runscope, implement the ```RSCPRunscopeManagerDelegate``` protocol's ```runscopeManager:shouldTrackURL:``` method and return NO for URLs that should not be tracked.
 
-```Obejctive-C
+``` Obejctive-C
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
     [[RSCPRunscopeManager sharedManager] startTrackingRequestsWithBucketKey:@"YOUR_KEY_HERE"];
