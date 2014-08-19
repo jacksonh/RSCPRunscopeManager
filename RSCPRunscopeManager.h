@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class RSCPRunscopeManager;
+
+
+@protocol RSCPRunscopeManager <NSObject>
+
+@optional
+
+- (BOOL)runscopeManager:(RSCPRunscopeManager *)manager shouldTrackURL:(NSURL *)URL;
+
+@end
+
+
 @interface RSCPRunscopeManager : NSObject
 
 + (instancetype)sharedManager;
@@ -16,6 +28,7 @@
 - (void)stopTrackingRequests;
 
 @property (nonatomic, readonly) BOOL isTrackingRequests;
+@property (weak, nonatomic) id<RSCPRunscopeManager> delegate;
 
 @end
 

@@ -50,7 +50,11 @@
 
 - (BOOL)shouldTrackURL:(NSURL *)URL
 {
-	return [[URL scheme] hasPrefix:@"http"];
+	if (![[URL scheme] hasPrefix:@"http"])
+		return NO;
+	if ([self.delegate respondsToSelector:@selector (runscopeManager:shouldTrackURL:)])
+		return [self.delegate runscopeManager:self shouldTrackURL:URL];
+	return YES;
 }
 
 - (NSURL *)bucketURLForURL:(NSURL *)URL
