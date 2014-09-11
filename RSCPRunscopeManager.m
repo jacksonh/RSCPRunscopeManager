@@ -63,7 +63,7 @@
 		return URL;
 
 	// Avoid double runscoping URLs
-	if (objc_getAssociatedObject (URL, _cmd))
+	if (objc_getAssociatedObject (URL, _cmd) || [self isRunscopedURL:URL])
 		return URL;
 
 	NSString *host = [URL host];
@@ -80,6 +80,11 @@
 	objc_setAssociatedObject (URL, _cmd, @(YES), OBJC_ASSOCIATION_COPY);
 
 	return URL;
+}
+
+- (BOOL)isRunscopedURL:(NSURL *)URL
+{
+	return [URL.host hasSuffix:@".runscope.net"];
 }
 
 @end
